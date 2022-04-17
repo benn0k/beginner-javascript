@@ -19,3 +19,4 @@ const html = `
 </div>
 `
 
+document.body.innerHTML = html;

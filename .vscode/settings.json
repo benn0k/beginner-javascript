@@ -23,5 +23,6 @@
     "titleBar.inactiveBackground": "#1c202399",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "1c2023"
+  "peacock.color": "1c2023",
+  "vscode-pets.petType": "dog"
 }

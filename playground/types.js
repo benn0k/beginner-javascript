@@ -32,3 +32,7 @@ dog = 'Griffin'; //typeof = string
 
 const somethingNull = null;
 
+let isDrawing = false;
+const age = 18;
+const ofAge = age > 19;
+console.log(ofAge);

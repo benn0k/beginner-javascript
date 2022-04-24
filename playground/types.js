@@ -1,6 +1,6 @@
 /*eslint-disable */
 console.log('we in here');
-
+/*
 const name = 'ryan';
 const middle = "andrew";
 const last = `bennek`;
@@ -20,3 +20,15 @@ const html = `
 `
 
 document.body.innerHTML = html;
+
+const person = {
+    first: 'ryan',
+    last: 'bennek',
+    age: 100
+}; */
+
+let dog; //Undefined
+dog = 'Griffin'; //typeof = string
+
+const somethingNull = null;
+

@@ -5,8 +5,10 @@ const people = [
 ];
 
 people.forEach((person, index) => {
-  console.log(person.name);
+  console.log(`${person.name}`);
 });
+
+console.table(people);
 
 // Console Methods
 
@@ -24,7 +26,16 @@ people.forEach((person, index) => {
 
 // Some Setup Code
 
+function doALotOfStuff() {
+  console.group('Doing some Stuff');
+  console.log('Check this out!');
+  console.error(`I'm an error message!`);
+  console.warn(`and I'm a warning!`);
+  console.groupEnd('Doing some Stuff');
+}
+
 function doctorize(name) {
+  // console.count('Running doctorize');
   return `Dr. ${name}`;
 }
 
@@ -38,8 +49,12 @@ function go() {
   console.log(name);
 }
 
+function bootstrap() {
+  console.log('Starting App');
+}
+
 const button = document.querySelector('.bigger');
-button.addEventListener('click', function(e) {
+button.addEventListener('click', (e) => {
   const newFontSize =
     parseFloat(getComputedStyle(e.currentTarget).fontSize) + 1;
   e.currentTarget.style.fontSize = `${newFontSize}px`;

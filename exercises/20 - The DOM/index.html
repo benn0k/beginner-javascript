@@ -7,17 +7,48 @@
   </head>
 
   <body>
+    <img class="nice" src="https://source.unsplash.com/random/300x500" />
     <div class="items">
       <p>Hi I'm a item</p>
       <div>
-        <h2>Sub Div</h2>
+        <h2>
+          I am a heading
+          <span>I am hidden!</span>
+        </h2>
         <p>Hi I'm a item</p>
+        <p class="pizza">This is how many Pizzas I ate! 🍕</p>
       </div>
-      <img src="https://source.unsplash.com/random/300x300" />
-      <img class="item2" src="https://source.unsplash.com/random/300x300" />
+      <img
+        data-name="griffin"
+        src="https://source.unsplash.com/random/300x300"
+      />
+      <img
+        data-name="Ryan"
+        data-last="Bennek"
+        class="custom"
+        src="https://source.unsplash.com/random/300x300"
+      />
+      <img data-name="gabs" src="https://source.unsplash.com/random/300x300" />
       <p>Hi I'm a item</p>
       <p>Hi I'm a item</p>
     </div>
+
+    <style>
+      h2 span {
+        display: none;
+      }
+
+      img {
+        transition: all 0.9s;
+        border-radius: 10%;
+      }
+
+      .round {
+        border-radius: 50%;
+        transition: all 0.9s;
+        transform: rotate(360deg);
+      }
+    </style>
     <script src="./the-dom.js"></script>
     <link rel="stylesheet" href="../../base.css" />
   </body>

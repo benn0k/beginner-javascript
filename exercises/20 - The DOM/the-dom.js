@@ -1,44 +1,47 @@
-// console.log(`we in here!!!`);
-
 // const p = document.querySelector('p');
-// const img = document.querySelectorAll('.items img');
-// const item2 = document.querySelector('.item2');
-// const item2Image = item2.querySelector('img');
+// const img = document.querySelector('.item ');
+// const imgItem = img.querySelector('img');
 // const heading = document.querySelector('h2');
+// // console.log(p);
+// // console.log(img);
+// // console.log(imgItem);
+// // console.dir(heading);
+
+// // set textContent property
+// // heading.textContent = 'Ryan is Cool and loves to Code ';
+
+// // console.log(heading.innerHTML);
+// // console.log(heading.outerHTML);
+
 // const pizzaList = document.querySelector('.pizza');
-// // heading.textContent = 'Ryan is Cool';
-// // console.dir(heading.outerHTML);
 // console.log(pizzaList.textContent);
 
-// pizzaList.textContent = `${pizzaList.textContent} 🍕`;
-// pizzaList.insertAdjacentText('beforeend', '🍕');
-// pizzaList.insertAdjacentText('afterbegin', '🍕');
+// // pizzaList.textContent = `${pizzaList.textContent} 🍕`;
 
-// classes
+// pizzaList.insertAdjacentText('afterbegin', `🍕`);
 
-const pic = document.querySelector('.nice');
-pic.classList.add('open');
-pic.classList.remove('nice');
-pic.classList.toggle('round');
-console.log(pic);
+// *Classes
+
+const picture = document.querySelector('.nice');
+picture.classList.add('open');
+picture.classList.remove('cool');
+
+console.log(picture.classList);
 
 function toggleRound() {
-  pic.classList.toggle('round');
+  picture.classList.toggle('round');
 }
 
-pic.addEventListener('click', toggleRound);
-pic.alt = 'cute pup';
-// console.log(pic.naturalWidth);
+picture.addEventListener('click', toggleRound);
 
-pic.addEventListener('load', () => {
-  console.log(pic.naturalWidth);
-});
-pic.setAttribute('alt', 'REALLY CUTE PUP');
-console.log(pic.getAttribute('alt'));
+picture.alt = 'Starry Night';
 
-const custom = document.querySelector('.custom');
-console.log(custom.dataset);
+// window.addEventListener('load', () => {
+//   console.log(picture.naturalWidth);
+// });
 
-custom.addEventListener('click', () => {
-  alert(`Welcome ${custom.dataset.name} ${custom.dataset.last}`);
-});
+picture.width = 200;
+
+picture.setAttribute('alt', 'REALLY CUTE PUP');
+
+console.log(picture.getAttribute('alt'));

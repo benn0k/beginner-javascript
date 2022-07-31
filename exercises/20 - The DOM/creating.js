@@ -1,68 +1,63 @@
-console.log(`we in here!!!`);
+reat//  Paragraph element
 const myParagraph = document.createElement('p');
-myParagraph.textContent = 'I am a P!';
+myParagraph.textContent = 'I am a Paragraph';
 myParagraph.classList.add('special');
-console.log(myParagraph);
+
+// Image Element
 
 const myImage = document.createElement('img');
-myImage.src = `https://picsum.photos/500`;
-myImage.alt = 'Nice Photo';
-console.log(myImage);
+myImage.src = 'https://picsum.photos/200';
+myImage.alt = 'Cool Photo';
+
+// Div Element
 
 const myDiv = document.createElement('div');
-myDiv.classList.add('custom');
-myImage.classList.add = 'wrapper';
-console.log(myDiv);
+myDiv.classList.add('wrapper');
+
+// Build Document
 
 myDiv.appendChild(myParagraph);
 myDiv.appendChild(myImage);
+
 document.body.appendChild(myDiv);
 
 const heading = document.createElement('h2');
-heading.textContent = 'Cool Things';
+heading.textContent = 'Sweet Stuff';
+
 myDiv.insertAdjacentElement('afterbegin', heading);
 
-// Create a unordered list with 5 list elements inside of it Bonus: Wrap it in a div and give it styles
-// create a wrapper to style with a class 'list-style'
-const listWrapper = document.createElement('div');
-listWrapper.classList.add('list-style');
-// create li element
-const listItem = document.createElement('ul');
+/* <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Five</li>
+</ul> 
+Place under new wrapper element */
 
-// My Solution
-// create a set of 'unorderedList' elements to include. There's def a better way to do this
-const unorderedList1 = document.createElement('li');
-unorderedList1.textContent = 'One';
+// Create Elements
 
-const unorderedList2 = document.createElement('li');
-unorderedList2.textContent = 'Two';
+const list = document.createElement('ul');
+const li1 = document.createElement('li');
+const li2 = document.createElement('li');
+const li3 = document.createElement('li');
+const li4 = document.createElement('li');
+const li5 = document.createElement('li');
 
-const unorderedList3 = document.createElement('li');
-unorderedList3.textContent = 'Three';
+// Add Text to elements
 
-const unorderedList4 = document.createElement('li');
-unorderedList4.textContent = 'Four';
+li1.textContent = 'One';
+li2.textContent = 'Two';
+li3.textContent = 'Three';
+li4.textContent = 'Four';
+li5.textContent = 'Five';
 
-const unorderedList5 = document.createElement('li');
-unorderedList5.textContent = 'Five';
+// Build List
+list.appendChild(li1);
+list.appendChild(li2);
+list.appendChild(li3);
+list.appendChild(li4);
+list.appendChild(li5);
 
-// append the ListWrapper to myDiv
-myDiv.insertAdjacentElement('afterend', listWrapper);
-// append the listItem to listWrapper
-listWrapper.insertAdjacentElement('afterbegin', listItem);
-
-// append each unordered list item to list
-listItem.appendChild(unorderedList1);
-listItem.appendChild(unorderedList2);
-listItem.appendChild(unorderedList3);
-listItem.appendChild(unorderedList4);
-listItem.appendChild(unorderedList5);
-
-// Wes's solution
-
-// const list = document.createElement('ul');
-// const li = document.createElement('li');
-// li.textContent = 'three';
-// list.appendChild(li);
-
-// document.body.insertAdjacentElement('afterbegin', list);
+//  Append to wrapper
+myDiv.insertAdjacentElement('afterbegin', list);

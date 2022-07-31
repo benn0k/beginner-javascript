@@ -45,3 +45,10 @@ picture.width = 200;
 picture.setAttribute('alt', 'REALLY CUTE PUP');
 
 console.log(picture.getAttribute('alt'));
+
+const custom = document.querySelector('.custom');
+console.log(custom.dataset);
+
+custom.addEventListener('click', () => {
+  alert(`Welcome ${custom.dataset.name} ${custom.dataset.last}`);
+});

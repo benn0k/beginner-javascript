@@ -7,11 +7,31 @@ myDiv.classList.add('wrapper');
 document.body.appendChild(myDiv);
 // make an unordered list
 
+const myUl = document.createElement('ul');
 // add three list items with the words "one, two, three" in them
+const myLi1 = document.createElement('li');
+myLi1.textContent = 'one';
+
+const myLi2 = document.createElement('li');
+myLi2.textContent = 'two';
+
+const myLi3 = document.createElement('li');
+myLi3.textContent = 'three';
+
+// Create list
+myUl.appendChild(myLi1);
+myUl.appendChild(myLi2);
+myUl.appendChild(myLi3);
+
 // put that list into the above wrapper
-// add ul element inside wrapper
-// Create three li elements with text
+myDiv.appendChild(myUl);
+// create an image
+const myImage = document.createElement('img');
+
+// set the src
+myImage.src = `https://picsum.photos/500`;
 // set the width to 250
+myImage.width = `250`;
 // set the source to an image - .src // .alt
 // add a class of cute
 // add an alt of Cute Puppy

@@ -6,44 +6,21 @@ myDiv.classList.add('wrapper');
 // put it into the body - insertAdjacentElement will allow you to specify a position. Function takes location, followed by element you're trying to append
 document.body.appendChild(myDiv);
 // make an unordered list
-const myList = document.createElement('ul');
 
+const myUl = document.createElement('ul');
 // add three list items with the words "one, two, three" in them
-const li1 = document.createElement('li');
-const li2 = document.createElement('li');
-const li3 = document.createElement('li');
-
-// set text content
-li1.textContent = `one`;
-li2.textContent = `two`;
-li3.textContent = `three`;
-
-// append to wrapper
-myList.appendChild(li1);
-myList.appendChild(li2);
-myList.appendChild(li3);
-
 // put that list into the above wrapper
-myDiv.appendChild(myList);
-
-// create image
+myDiv.appendChild(myUl);
+// create an image
 const myImage = document.createElement('img');
 
-// Set src
-myImage.src = `http://picsum.photos/500`;
-
+// set the src
+myImage.src = `https://picsum.photos/500`;
 // set the width to 250
-myImage.width = 250;
-
+// set the source to an image - .src // .alt
 // add a class of cute
-myImage.classList.add(`cute`);
-
 // add an alt of Cute Puppy
-myImage.alt = `Cute Puppy`;
-
 // Append that image to the wrapper
-myDiv.appendChild(myImage);
-
 // with HTML string, make a div, with two paragraphs inside of it
 const myHTML = `
 <div class="debug">
@@ -56,7 +33,6 @@ const myHTML = `
 `;
 // put this div before the unordered list from above
 // Way #1 with a fragment
-const myFragment = document.createRange().createContextualFragment(myHTML);
 // Insert Before takes two args, the node you're wanting to add, and the child location you're wanting to append before
 // const myFragment = document.createRange().createContextualFragment(myHTML);
 // wrapper.insertBefore(myFragment, ul);

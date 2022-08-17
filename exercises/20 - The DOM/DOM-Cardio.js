@@ -34,9 +34,9 @@ const myHTML = `
 // put this div before the unordered list from above
 // Way #1 with a fragment
 // Insert Before takes two args, the node you're wanting to add, and the child location you're wanting to append before
-// const myFragment = document.createRange().createContextualFragment(myHTML);
+const myFragment = document.createRange().createContextualFragment(myHTML);
 // wrapper.insertBefore(myFragment, ul);
-myDiv.insertBefore(myFragment, myImage);
+myDiv.insertAdjacentElement('afterbegin', myImage);
 
 // Way #2 with raw HTML
 const myDiv2 = document.createElement(`div`);

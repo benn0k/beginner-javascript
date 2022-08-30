@@ -32,3 +32,7 @@ ctx.stroke();
 // Clear shake function
 
 //Listen for arrow keys
+
+@media only screen and (max-width: 359px) {
+    #mv-content-mobile-wrapper > div > div:first-of-type >div {padding-left: 10px !important; pading-right: 10px !important;}
+}

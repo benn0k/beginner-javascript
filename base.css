@@ -257,3 +257,14 @@ h6 {
   color: var(--black);
   text-shadow: none;
 }
+
+@media only screen and (max-width: 359px) {
+  #mv-content-mobile-wrapper > div > div:first-of-type > div {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+.cmplz-btn {
+  top: 675px !important;
+}

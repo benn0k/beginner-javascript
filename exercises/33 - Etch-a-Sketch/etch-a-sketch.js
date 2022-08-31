@@ -4,6 +4,7 @@ console.log(`we in here!!!`);
 const canvas = document.querySelector('#etch-a-sketch');
 const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector('.shake');
+const MOVE_AMOUNT = 10;
 
 // Set up Canvas for drawing
 ctx.lineJoin = 'round';
@@ -15,24 +16,37 @@ ctx.lineWidth = 10;
 const ranNumber = (num) => Math.floor(Math.random() * num);
 
 // Not needed, but we can assign variables in objects like this. This creates two mutable variables named ranWidth and ranHeight = the width/height of the canvas.
-let { ranWidth, ranHeight } = canvas;
+let { y, x } = canvas;
 
-ranWidth = ranNumber(1000);
-ranHeight = ranNumber(1600);
+x = ranNumber(1600);
+y = ranNumber(1000);
+
 
 // set beginning draw point
 ctx.beginPath();
-ctx.moveTo(ranHeight, ranWidth);
-ctx.lineTo(ranHeight, ranWidth);
+ctx.moveTo(x, y);
+ctx.lineTo(x, y);
 ctx.stroke();
 
 // Write Draw function
-function draw(options)
+function draw({key}){
+console.log(key)
+//start draw patch
+ctx.beginPath();
+ctx.moveTo(x,y);
+//Move to new location
+x -= MOVE_AMOUNT;
+y -= MOVE_AMOUNT;
+// Draw
+ctx.lineTo(x,y);
+ctx.stroke();
+}
 // Write handler for keys
 function handleKey(e) {
   if (e.key.includes('Arrow')) {
     e.preventDefault();
-    console.log(e.key);
+    draw({key:e.key})
+    
     console.log(`Handling Key`);
   }
 }

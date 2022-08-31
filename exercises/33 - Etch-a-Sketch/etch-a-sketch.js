@@ -9,30 +9,34 @@ const shakeButton = document.querySelector('.shake');
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = 10;
- // This starts the Draw
-ctx.beginPath;
+// This starts the Draw
 
-//set random num variables to use for starting point
-const ranNumber = (num) => {
-    return ranNum = Math.floor(Math.random() * num)
-}
- 
-const ranWidth = ranNumber(1000);
-const ranHeight = ranNumber(1600); 
+// set random num variables to use for starting point
+const ranNumber = (num) => Math.floor(Math.random() * num);
 
-//set beginning draw point
-ctx.moveTo(ranHeight,ranWidth);
-ctx.lineTo(ranHeight,ranWidth);
+// Not needed, but we can assign variables in objects like this. This creates two mutable variables named ranWidth and ranHeight = the width/height of the canvas.
+let { ranWidth, ranHeight } = canvas;
+
+ranWidth = ranNumber(1000);
+ranHeight = ranNumber(1600);
+
+// set beginning draw point
+ctx.beginPath();
+ctx.moveTo(ranHeight, ranWidth);
+ctx.lineTo(ranHeight, ranWidth);
 ctx.stroke();
 
-//Write Draw function
-
-//Write handler for keys
-
+// Write Draw function
+function draw(options)
+// Write handler for keys
+function handleKey(e) {
+  if (e.key.includes('Arrow')) {
+    e.preventDefault();
+    console.log(e.key);
+    console.log(`Handling Key`);
+  }
+}
 // Clear shake function
 
-//Listen for arrow keys
-
-@media only screen and (max-width: 359px) {
-    #mv-content-mobile-wrapper > div > div:first-of-type >div {padding-left: 10px !important; pading-right: 10px !important;}
-}
+// Listen for arrow keys
+window.addEventListener('keydown', handleKey);

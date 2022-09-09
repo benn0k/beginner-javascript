@@ -1,37 +1,43 @@
 console.log(`we in here!!!`);
-
+//* Set up Canvas and set global variables 
 // Select Elements
 const canvas = document.querySelector('#etch-a-sketch');
 const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector('.shake');
+
+//Create Constant for amount the etch a sketch should be moving
 const MOVE_AMOUNT = 20;
 
-//Create variables for width/height of canvas
+//Create variables for width/height of canvas (for later use)
 let canvasX = canvas.width;
 let canvasY = canvas.height;
 
 // Set up Canvas for drawing
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
+//Sets width of drawing line
 ctx.lineWidth = 40;
 
-// set random num variables to use for starting point
+// Function to create random numbers for starting point
 const ranNumber = (num) => Math.floor(Math.random() * num);
 
+x = ranNumber(canvasX);
+y = ranNumber(canvasY);
 
-
-x = ranNumber(1600);
-y = ranNumber(1000);
+// Set variable for starting number, somewhere on hsl 360
+let hue = ranNumber(360);
 
 // set beginning draw point
 ctx.beginPath();
+//moveTo and lineTo move the draw pointer 
 ctx.moveTo(x, y);
 ctx.lineTo(x, y);
+ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 ctx.stroke();
 
 // set initial hue color for line and set strokestyle color
-let hue = 0;
-ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
+
 
 // Write Draw function
 function draw({ key }) {

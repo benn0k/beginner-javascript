@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Intervals and Timers</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Intervals and Timers</title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <script>
+      function buzzer() {
+        console.log('⏰⏰⏰⏰⏰');
+      }
 
-<body>
+      setTimeout(buzzer, 500);
 
-</body>
+      function setImmediateInterval(functionToRun, ms) {
+        // immediatly call function
+        functionToRun();
+        // run a regular interval
+        return setInterval(functionToRun, ms);
+      }
 
+      setImmediateInterval(buzzer, 2000);
+
+      function destroy() {
+        document.body.innerHTML = `<p>DESTROYED</p>`;
+      }
+
+      const bombTimer = setTimeout(destroy, 5000);
+
+      window.addEventListener('click', () => {
+        console.log('You clicked! You saved the World!');
+        clearTimeout(bombTimer);
+      });
+
+      const poopInterval = setInterval(() => {
+        console.log('POOP');
+        console.log('hehe');
+      }, 10);
+
+      setTimeout(() => {
+        clearInterval(poopInterval);
+      }, 3000);
+    </script>
+  </body>
 </html>

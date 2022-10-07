@@ -1,17 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <script src="https://unpkg.com/lodash@4.17.21/lodash.js"></script>
+    <input type="text" name="first" value="Ryan" />
+    <script>
+      const age = 100;
+      const person = {
+        name: 'Ryan',
+        age,
+        'cool-dude': true,
+        'really cool': false,
+        777: true,
+        dog: 'snickers',
+        clothing: {
+          shirts: 10,
+          pants: 2,
+        },
+        sayHello(greeting = 'Hello') {
+          return `${greeting} ${this.name}`;
+        },
+        sneeze: () => console.log('AHHH CHOOO', this),
+      };
 
-<body>
-  <script>
+      person.job = 'Web Developer';
 
-  </script>
-</body>
+      console.log(person);
 
+      const nameInput = document.querySelector('[name=first]');
+      const nameValue = nameInput.value;
+      console.log(nameValue);
+
+      const person1 = {
+        first: 'Ryan',
+        last: 'Bennek',
+        clothing: {
+          shirts: 10,
+          pants: 2,
+        },
+      };
+      const person2 = {
+        first: 'Ryan',
+        last: 'Bennek',
+      };
+      // const person3 = person1;
+      // person3.first = 'Larry';
+      // console.log(person3.first);
+      // console.log(person1.first);
+      // const person3 = { ...person1 };
+      const person3 = _.cloneDeep(person1);
+      person3.first = 'Carl';
+      person3.clothing.shirts = 100;
+
+      const meatInventory = {
+        bacon: 2,
+        sausage: 3,
+      };
+
+      const veggieInventory = {
+        lettuce: 5,
+        tomatoes: 3,
+      };
+
+      const inventory = { ...meatInventory, ...veggieInventory };
+    </script>
+  </body>
 </html>

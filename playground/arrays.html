@@ -9,8 +9,54 @@
 
   <body>
     <script>
-      const names = ['ryan', 'gab', 'griffin', 'honeybuns'];
-      console.log(names[names.length - 1]);
+      const names = ['Ryan', 'Gab', 'Honeysuckle', 'Griffin', 'HotDog'];
+      // console.log(names[1]);
+      // console.log(names.length);
+      // console.log(names[names.length - 1]);
+
+      // Mutation Method
+
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const numbersBackwards = numbers.reverse();
+
+      // Immutable
+      const pizzaSlice = numbers.slice(2, 4);
+      console.log(pizzaSlice);
+      // How to copy an array
+      const numbersReverse = [...numbers].reverse();
+      console.log(numbersReverse);
+
+      names.push('Dingo');
+      console.log(names);
+
+      //
+      const comments = [
+        { text: 'Cool Beans', id: 124 },
+        { text: 'Hey it is me Jon Bennek', id: 125 },
+        { text: 'Get Trolled Nerd', id: 126 },
+        { text: 'And Next', id: 127 },
+        { text: 'Okay Next, even', id: 128 },
+        { text: 'I love Honesuckle', id: 129 },
+      ];
+
+      function deleteComment(id, comments) {
+        // first find the index of the item in the array
+        const commentIndex = comments.findIndex((comment) => comment.id === id);
+        // make a new array without that item in it
+        return [
+          ...comments.slice(0, commentIndex),
+          ...comments.slice(commentIndex + 1),
+        ];
+
+        // return our new array
+      }
+
+      const griffIndex = names.findIndex((name) => name === 'Griffin');
+
+      const newNamesWithOutGriffin = [
+        ...names.slice(0, griffIndex),
+        ...names.slice(griffIndex + 1),
+      ];
     </script>
   </body>
 </html>

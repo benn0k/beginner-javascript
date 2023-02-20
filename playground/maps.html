@@ -11,31 +11,30 @@
     <ul class="prizes"></ul>
     <script>
       const person1 = {
-        name: 'Ryan',
-        age: 200,
+        name: 'ryan',
+        age: 100,
       };
 
       const myMap = new Map();
       myMap.set('name', 'ryan');
       myMap.set(100, 'this is a number');
       myMap.set(person1, 'Really Cool');
-      console.log(myMap);
 
-      console.log(myMap.get(person1));
+      // console.log(myMap.get(person1));
+      // console.log(myMap);
 
-      const score = 100;
+      const score = 300;
       const prizes = new Map();
       prizes.set(100, 'Bear');
-      prizes.set(200, 'Dog');
-      prizes.set(300, 'Turtle');
-      prizes.set(400, 'Car');
+      prizes.set(200, 'Duck');
+      prizes.set(300, 'Car');
+
       console.log(`You win a ${prizes.get(score)}`);
 
       const ul = document.querySelector('.prizes');
-
       for (const [points, prize] of prizes) {
         const li = `<li>${points} - ${prize}</li>`;
-        ul.insertAdjacentHTML('afterbegin', li);
+        ul.insertAdjacentHTML('beforeend', li);
       }
     </script>
   </body>

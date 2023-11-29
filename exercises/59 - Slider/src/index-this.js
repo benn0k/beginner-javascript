@@ -1,3 +1,5 @@
+console.log('we in here');
+
 function Slider(slider) {
   // Check that slider is a valid instance
   if (!(slider instanceof Element)) {

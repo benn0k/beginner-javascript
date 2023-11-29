@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>New, This, Prototypes and Classes</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>New, This, Prototypes and Classes</title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <button class="one">Button 1</button>
+    <button class="two">Button 2</button>
+  </body>
+  <script>
+    // const myDate = new Date('August 11, 2025');
+    // console.dir(myDate);
+    // console.log(myDate.getFullYear());
 
-<body>
+    // const button1 = document.querySelector('.one');
+    // const button2 = document.querySelector('.two');
 
-</body>
+    // function tellMeAboutTheButton() {
+    //   console.log(this);
+    //   setTimeout(() => {
+    //     this.textContent = 'You Clicked ME!';
+    //   }, 1000);
+    // }
 
+    // button1.addEventListener('click', tellMeAboutTheButton);
+    // button2.addEventListener('click', tellMeAboutTheButton);
+
+    function Pizza(toppings = [], customerName) {
+      console.log('Making a pizza');
+      // same the toppings that were passed in, to this instances of pizza
+      this.toppings = toppings;
+      this.customer = customerName;
+      this.id = Math.floor(Math.random() * 16777215).toString(16);
+    }
+
+    const pepperoniPizza = new Pizza(['pepperoni'], 'Ryan');
+    const canadianPizza = new Pizza(['pepperoni', 'mushrooms', 'onion'], 'Gab');
+  </script>
 </html>

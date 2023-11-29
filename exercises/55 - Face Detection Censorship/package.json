@@ -11,7 +11,7 @@
   "browserslist": [
     "last 1 Chrome version"
   ],
-  "dependencies": {
-    "parcel": "2.0.1"
+  "devDependencies": {
+    "parcel": "^2.8.3"
   }
 }

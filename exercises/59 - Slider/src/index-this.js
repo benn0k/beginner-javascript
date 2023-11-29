@@ -3,14 +3,16 @@ function Slider(slider) {
   if (!(slider instanceof Element)) {
     throw new Error('No slider passed in');
   }
+
+  this.slider = slider;
   // Working Variables
   let current;
   let previous;
   let next;
   // select the elements needed for the slider
-  const slides = slider.querySelector('.slides');
-  const previousButton = slider.querySelector('.goToPrev');
-  const nextButton = slider.querySelector('.goToNext');
+  this.slides = slider.querySelector('.slides');
+  this.previousButton = slider.querySelector('.goToPrev');
+  this.nextButton = slider.querySelector('.goToNext');
 
   // Construct our slider by setting working variables to matching slides in sliders
   function startSlider() {

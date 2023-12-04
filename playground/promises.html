@@ -1,17 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Promises</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Promises</title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <script>
+      function makePizza(toppings) {
+        const pizzaPromise = new Promise((resolve, reject) => {
+          // Check if someone put pineapple - reject if so
+          if (toppings.includes('pineapple')) {
+            reject('Seriously? no Pineapple');
+          }
+          setTimeout(() => {
+            resolve(`Here is your pizza🍕 with the toppings ${toppings}`);
+          }, 1000);
+        });
+        return pizzaPromise;
+      }
 
-<body>
-  <script>
+      const pepperoniPromise = makePizza(['pepperoni', 'cheese', 'sauce']);
+      const canadianPromise = makePizza([
+        'pepperoni',
+        'onions',
+        'mushrooms',
+        'pineapple',
+      ]);
 
-  </script>
-</body>
-
+      canadianPromise
+        .then((e) => {
+          console.log('Ahh, got it');
+          console.log(e);
+        })
+        .catch((err) => {
+          console.log('Oh no!!!');
+          console.log(err);
+        });
+    </script>
+  </body>
 </html>

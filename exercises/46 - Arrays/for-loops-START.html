@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>For Loops</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>For Loops</title>
-</head>
+  <body>
+    <script>
+      const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
 
-<body>
-  <script>
-    const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
+      const name = 'Wes Bos';
 
-    const name = 'Wes Bos';
+      const ryan = {
+        name: 'ryan',
+        age: 29,
+        isCool: true,
+      };
 
-    // For
+      // For
+      for (let i = 0; i <= 10; i++) {
+        console.log(i);
+      }
+      // For of
+      for (const letter of name) {
+        console.log(letter);
+      }
 
-    // For of
+      // For in - used for looping over keys of an object
+      // eslint-disable-next-line no-restricted-syntax, guard-for-in
+      for (const prop in ryan) {
+        console.log(prop);
+      }
+      // While Loop
+      const cool = true;
+      const i = 1;
+      // while (cool === true) {
+      //   console.log('You are Cool');
+      //   i++;
+      //   if (i > 100) {
+      //     cool = false;
+      //   }
+      // }
 
-    // For in
-
-    // While Loop
-  </script>
-</body>
-
+      // Do While
+    </script>
+  </body>
 </html>

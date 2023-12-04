@@ -126,15 +126,52 @@
                   */
 
       // find the first rating that talks about a burger with find()
-      // find all ratings that are above 2 with filter()
-      // find all ratings that talk about a burger with filter()
-      // Remove the one star rating however you like!
 
+      // eslint-disable-next-line prettier/prettier
+      const burgRating = feedback.find((rating) =>
+        rating.comment.includes('burg')
+      );
+      console.log(burgRating);
+
+      // find all ratings that are above 2 with filter()
+      const goodReviews = feedback.filter(
+        (Singlefeedback) => Singlefeedback.rating >= 2
+      );
+
+      console.table(goodReviews);
+      // find all ratings that talk about a burger with filter()
+
+      const findBurg = feedback.filter((Singlefeedback) =>
+        Singlefeedback.comment.includes('burg')
+      );
+      console.log(findBurg);
+      // Remove the one star rating however you like!
+      const legitRatings = feedback.filter((single) => single.rating !== 1);
+      console.table(legitRatings);
       // check if there is at least 5 of one type of meat with some()
+      const isThereEnoughOfAtLeastOneMeat = Object.values(meats).some(
+        (meatValue) => meatValue >= 5
+      );
+      console.log(isThereEnoughOfAtLeastOneMeat);
       // make sure we have at least 3 of every meat with every()
+      const isThereEnoughOfEveryMeat = Object.values(meats).every(
+        (meatValue) => meatValue >= 3
+      );
+
+      console.log(isThereEnoughOfEveryMeat);
+
       // sort the toppings alphabetically with sort()
+      console.log(toppings.sort());
       // sort the order totals from most expensive to least with .sort()
+      const sortTotals = orderTotals.sort((a, b) => a - b);
+      console.log(sortTotals);
       // Sort the prices with sort()
+      const sortPrices = Object.entries(prices).sort((a, b) => {
+        const aPrice = a[1];
+        const bPrice = b[1];
+        return aPrice - bPrice;
+      });
+      console.table(Object.fromEntries(sortP));
 
       /*
                     Looping Methods (next)

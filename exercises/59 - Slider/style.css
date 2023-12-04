@@ -1,7 +1,7 @@
 .slides {
   width: 800px;
   height: 500px;
-  border:2px solid black;
+  border: 2px solid black;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
@@ -19,7 +19,7 @@
   font-size: 100px;
   font-family: sans-serif;
   border: 5px solid white;
-  transition: all .25s;
+  transition: all 0.25s;
   transform: translateX(-200%);
 }
 

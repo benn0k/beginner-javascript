@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   background-color: #d0d0d0;
 }
 
@@ -16,7 +17,7 @@ body {
 }
 
 .app form {
-  border:0;
+  border: 0;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-auto-rows: 1fr;
@@ -24,17 +25,16 @@ body {
   text-align: center;
   font-weight: 600;
   padding: 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  grid-gap:2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  grid-gap: 2rem;
   align-items: stretch;
 }
 
-
 .app :is(button, input, select, textarea) {
-  margin:0;
+  margin: 0;
   text-align: center;
   font-weight: 600;
-  border:0;
+  border: 0;
 }
 
 .app :is(button, input, select, textarea):focus {
@@ -47,7 +47,7 @@ body {
 
 .app select {
   background: none;
-  border:0;
+  border: 0;
   padding: 2rem;
 }
 

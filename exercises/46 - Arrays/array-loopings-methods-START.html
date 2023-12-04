@@ -1,135 +1,356 @@
+<!-- eslint-disable no-unused-expressions -->
+<!-- eslint-disable no-unused-expressions -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title> </title>
+    <link rel="stylesheet" href="../../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>
+  <body>
+    <script>
+      const toppings = [
+        'Mushrooms ',
+        'Tomatoes',
+        'Eggs',
+        'Chili',
+        'Lettuce',
+        'Avocado',
+        'Chiles',
+        'Bacon',
+        'Pickles',
+        'Onions',
+        'Cheese',
+      ];
 
-  </title>
-  <link rel="stylesheet" href="../../base.css">
-</head>
+      const students = [
+        {
+          id: '11ce',
+          first_name: 'Dall',
+          last_name: 'Puckring',
+        },
+        {
+          id: '2958',
+          first_name: 'Margarete',
+          last_name: 'Brandi',
+        },
+        {
+          id: '565a',
+          first_name: 'Bendicty',
+          last_name: 'Woodage',
+        },
+        {
+          id: '3a16',
+          first_name: 'Micki',
+          last_name: 'Mattes',
+        },
+        {
+          id: 'f396',
+          first_name: 'Flory',
+          last_name: 'Gladeche',
+        },
+        {
+          id: 'de5f',
+          first_name: 'Jamill',
+          last_name: 'Emilien',
+        },
+        {
+          id: '54cb',
+          first_name: 'Brett',
+          last_name: 'Aizikowitz',
+        },
+        {
+          id: '9135',
+          first_name: 'Lorry',
+          last_name: 'Smallman',
+        },
+        {
+          id: '978f',
+          first_name: 'Gilly',
+          last_name: 'Flott',
+        },
+      ];
 
-<body>
-  <script>
-    const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
+      const people = [
+        {
+          birthday: 'April 22, 1993',
+          names: {
+            first: 'Keith',
+            last: 'Buckley',
+          },
+        },
+        {
+          birthday: 'January 3, 1975',
+          names: {
+            first: 'Larry',
+            last: 'Heep',
+          },
+        },
+        {
+          birthday: 'February 12, 1944',
+          names: {
+            first: 'Linda',
+            last: 'Bermeer',
+          },
+        },
+      ];
 
-    const students = [
-      {
-        id: '11ce',
-        first_name: 'Dall',
-        last_name: 'Puckring',
-      },
-      {
-        id: '2958',
-        first_name: 'Margarete',
-        last_name: 'Brandi',
-      },
-      {
-        id: '565a',
-        first_name: 'Bendicty',
-        last_name: 'Woodage',
-      },
-      {
-        id: '3a16',
-        first_name: 'Micki',
-        last_name: 'Mattes',
-      },
-      {
-        id: 'f396',
-        first_name: 'Flory',
-        last_name: 'Gladeche',
-      },
-      {
-        id: 'de5f',
-        first_name: 'Jamill',
-        last_name: 'Emilien',
-      },
-      {
-        id: '54cb',
-        first_name: 'Brett',
-        last_name: 'Aizikowitz',
-      },
-      {
-        id: '9135',
-        first_name: 'Lorry',
-        last_name: 'Smallman',
-      },
-      {
-        id: '978f',
-        first_name: 'Gilly',
-        last_name: 'Flott',
-      },
-    ];
+      const buns = ['egg', 'wonder', 'brioche'];
 
-    const people = [
-      {
-        birthday: 'April 22, 1993',
-        names: {
-          first: 'Keith',
-          last: 'Buckley'
-        }
-      },
-      {
-        birthday: 'January 3, 1975',
-        names: {
-          first: 'Larry',
-          last: 'Heep'
-        }
-      },
-      {
-        birthday: 'February 12, 1944',
-        names: {
-          first: 'Linda',
-          last: 'Bermeer'
-        }
+      const meats = {
+        beyond: 10,
+        beef: 5,
+        pork: 7,
+      };
+
+      const prices = {
+        hotDog: 453,
+        burger: 765,
+        sausage: 634,
+        corn: 234,
+      };
+
+      const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222];
+
+      const feedback = [
+        { comment: 'Love the burgs', rating: 4 },
+        { comment: 'Horrible Service', rating: 2 },
+        { comment: 'Smoothies are great, liked the burger too', rating: 5 },
+        { comment: 'Ambiance needs work', rating: 3 },
+        { comment: 'I DONT LIKE BURGERS', rating: 1 },
+      ];
+
+      const faces = ['😃', '🤠', '🤡', '🤑', '😵', '🌞', '🐶', '😺'];
+
+      const inventory = [
+        { type: 'shirt', price: 4000 },
+        { type: 'pants', price: 4532 },
+        { type: 'socks', price: 234 },
+        { type: 'shirt', price: 2343 },
+        { type: 'pants', price: 2343 },
+        { type: 'socks', price: 542 },
+        { type: 'pants', price: 123 },
+      ];
+
+      /*
+                                Looping Methods
+                              */
+      function logTopping(topping, index, originalArray) {
+        console.log(topping);
+
+        // Log the next topping if there is one
+        const nextTopping = originalArray[index + 1];
+        // eslint-disable-next-line no-unused-expressions
+        nextTopping ? console.log(nextTopping) : null;
+
+        // Log the previous topping if there is one
+        const previousTopping = originalArray[index - 1];
+        // eslint-disable-next-line no-unused-expressions
+        previousTopping ? console.log(previousTopping) : null;
+        console.log('-------------');
+
+        // if last item in array, say bye bye
+        // eslint-disable-next-line no-unused-expressions
+        index === originalArray.length - 1
+          ? console.log('ByeBye')
+          : console.log('Getting next topping');
       }
-    ];
 
+      toppings.forEach(logTopping);
 
-    const buns = ['egg', 'wonder', 'brioche'];
+      // Map, Filter, Reduce
 
-    const meats = {
-      beyond: 10,
-      beef: 5,
-      pork: 7
-    };
+      console.clear();
 
-    const prices = {
-      hotDog: 453,
-      burger: 765,
-      sausage: 634,
-      corn: 234,
-    };
+      // function addArms(face) {
+      //   return `👋 ${face}👋`;
+      // }
 
-    const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222];
+      // const toys = faces.map(addArms);
+      // console.log(toys);
 
-    const feedback = [
-      { comment: 'Love the burgs', rating: 4 },
-      { comment: 'Horrible Service', rating: 2 },
-      { comment: 'Smoothies are great, liked the burger too', rating: 5 },
-      { comment: 'Ambiance needs work', rating: 3 },
-      { comment: 'I DONT LIKE BURGERS', rating: 1 },
-    ];
+      // const houseNames = ['ryan', 'gab', 'honeysuckle', 'griffin'];
 
-    const faces = ['😃', '🤠', '🤡', '🤑', '😵', '🌞', '🐶', '😺'];
+      // function capatalize(word) {
+      //   return `${word[0].toUpperCase()}${word.slice(1)}`;
+      // }
 
-    const inventory = [
-      { type: 'shirt', price: 4000 },
-      { type: 'pants', price: 4532 },
-      { type: 'socks', price: 234 },
-      { type: 'shirt', price: 2343 },
-      { type: 'pants', price: 2343 },
-      { type: 'socks', price: 542 },
-      { type: 'pants', price: 123 },
-    ];
+      // console.log(houseNames.map(capatalize));
 
+      // const orderTotalswithTax = orderTotals.map((total) => total * 1.3);
+      // console.log(orderTotalswithTax);
 
-    /*
-      Looping Methods
-    */
+      const cleanPeople = people.map((person) => {
+        // Get their Birthday -timestamp
+        const birthday = new Date(person.birthday).getTime();
+        // Now timestamp
+        const now = Date.now();
+        // figure out how old they are
+        const age = Math.floor((now - birthday) / 31536000000);
+        console.log(age);
+        // return their full name and bday in an object
+        return {
+          age,
+          name: `${person.names.first} ${person.names.last}`,
+        };
+      });
 
-  </script>
-</body>
+      console.table(cleanPeople);
+      const over40 = cleanPeople.filter((person) => person.age > 40);
+      console.log(over40);
+      console.clear();
 
+      // Find
+      function findByID(id) {
+        return function isStudent(student) {
+          return student.id === id;
+        };
+      }
+
+      // const findStudent = students.find((student) => student.id === '565a');
+
+      function findByProp(prop, propID) {
+        return function (student) {
+          return student[prop] === propID;
+        };
+      }
+      const student1 = students.find(findByProp('id', '3a16'));
+      const student2 = students.find(findByProp('id', '978f'));
+      const student3 = students.find(findByProp('first_name', 'Dall'));
+      const student4 = students.find(findByProp('last_name', 'Gladeche'));
+      console.log(student1);
+      console.log(student2);
+      console.log(student3);
+      console.log(student4);
+
+      console.clear();
+
+      // Reduce!
+      // function tallyNumbers(tally, currentTotal) {
+      //   console.log(`The current total is ${currentTotal}`);
+      //   console.log(`The current tally is ${tally}`);
+      //   console.log(`----------------`);
+      //   return tally + currentTotal;
+      // }
+
+      // const allOrders = orderTotals.reduce(tallyNumbers, 0);
+      function inventoryReducer(totals, item) {
+        console.log(`Looping over ${item.type}`);
+        // increment the type by 1
+        totals[item.type] = totals[item.type] + 1 || 1;
+        // return the totals
+        return totals;
+      }
+      const inventoryCounts = inventory.reduce(inventoryReducer, {});
+      console.log(inventoryCounts);
+      // Reduce inventory down to total prices
+      function inventoryPriceReducer(totals, item) {
+        return totals + item.price;
+      }
+
+      const totalInventoryPrice = inventory.reduce(inventoryPriceReducer, 0);
+
+      console.log(totalInventoryPrice);
+
+      console.clear();
+
+      //! Clear Page
+
+      // grab all the text from a webpage
+      const webpageText = `Array.prototype.reduce()
+
+      The reduce() method executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+
+      The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+
+      Perhaps the easiest-to-understand case for reduce() is to return the sum of all the elements in an array:
+
+      Try it
+
+      The reducer walks through the array element-by-element, at each step adding the current array value to the result from the previous step (this result is the running sum of all the previous steps) — until there are no more elements to add.
+
+      Syntax
+      reduce(callbackFn)
+      reduce(callbackFn, initialValue)
+      Copy to Clipboard
+      Parameters
+      callbackFn
+      A function to execute for each element in the array. Its return value becomes the value of the accumulator parameter on the next invocation of callbackFn. For the last invocation, the return value becomes the return value of reduce(). The function is called with the following arguments:
+
+      accumulator
+      The value resulting from the previous call to callbackFn. On first call, initialValue if specified, otherwise the value of array[0].
+
+      currentValue
+      The value of the current element. On first call, the value of array[0] if an initialValue was specified, otherwise the value of array[1].
+
+      currentIndex
+      The index position of currentValue in the array. On first call, 0 if initialValue was specified, otherwise 1.
+
+      array
+      The array reduce() was called upon.
+
+      initialValue Optional
+      A value to which accumulator is initialized the first time the callback is called. If initialValue is specified, callbackFn starts executing with the first value in the array as currentValue. If initialValue is not specified, accumulator is initialized to the first value in the array, and callbackFn starts executing with the second value in the array as currentValue. In this case, if the array is empty (so that there's no first value to return as accumulator), an error is thrown.
+
+      Return value
+      The value that results from running the "reducer" callback function to completion over the entire array.
+
+      Exceptions
+      TypeError
+      Thrown if the array contains no elements and initialValue is not provided.
+
+      Description
+      The reduce() method is an iterative method. It runs a "reducer" callback function over all elements in the array, in ascending-index order, and accumulates them into a single value. Every time, the return value of callbackFn is passed into callbackFn again on next invocation as accumulator. The final value of accumulator (which is the value returned from callbackFn on the final iteration of the array) becomes the return value of reduce().
+
+      callbackFn is invoked only for array indexes which have assigned values. It is not invoked for empty slots in sparse arrays.
+
+      Unlike other iterative methods, reduce() does not accept a thisArg argument. callbackFn is always called with undefined as this, which gets substituted with globalThis if callbackFn is non-strict.
+
+      reduce() is a central concept in functional programming, where it's not possible to mutate any value, so in order to accumulate all values in an array, one must return a new accumulator value on every iteration. This convention propagates to JavaScript's reduce(): you should use spreading or other copying methods where possible to create new arrays and objects as the accumulator, rather than mutating the existing one. If you decided to mutate the accumulator instead of copying it, remember to still return the modified object in the callback, or the next iteration will receive undefined.`;
+      // Split all letters into a array
+      const stringSplit = (string) => {
+        const text = string;
+        return text.split('');
+      };
+      // Aaaaand split our text text
+      const splitText = stringSplit(webpageText);
+      // count how many times each letter and number occur
+
+      // Get rid of non letters (junk)
+      function isValidChar(char) {
+        return char.match(/[a-zA-Z0-9]/);
+      }
+
+      // Lowercase Text
+      function lowercase(char) {
+        return char.toLowerCase();
+      }
+
+      // Count instances
+      function instanceCounter(counts, char) {
+        // eslint-disable-next-line no-unused-expressions
+        counts[char]
+          ? // If Exists
+            (counts[char] = counts[char] + 1)
+          : // If does not exist
+            (counts[char] = 1);
+        return counts;
+      }
+
+      const result = splitText
+        .filter(isValidChar)
+        .map(lowercase)
+        .reduce(instanceCounter, {});
+
+      // Expected - array of count of number of strings
+      console.log(result);
+      function sortByValue(a, b) {
+        return a[1] - b[1];
+      }
+      const sortedResult = Object.entries(result).sort(sortByValue);
+      console.log(sortedResult);
+    </script>
+  </body>
 </html>

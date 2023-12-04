@@ -33,35 +33,43 @@
     </style>
     <div class="go">Click Me</div>
     <script>
+      function wait(ms = 0) {
+        return new Promise((resolve) => {
+          setTimeout(resolve, ms);
+        });
+      }
+
       const go = document.querySelector('.go');
 
-      go.addEventListener('click', (e) => {
-        // Grab element
+      function animate(e) {
         const el = e.currentTarget;
         // Change text to "Go"
         el.textContent = 'GO!';
         // After 2 seconds, add class of circle
-        setTimeout(() => {
-          el.classList.add('circle');
-          // After .5s, make it Red
-          setTimeout(() => {
+        wait(200)
+          .then(() => {
+            el.classList.add('circle');
+            return wait(500);
+          })
+          .then(() => {
             el.classList.add('red');
-            // make it square after 0.25s
-            setTimeout(() => {
-              el.classList.remove('circle');
-              // Make it Purple after .3s
-              setTimeout(() => {
-                el.classList.remove('red');
-                el.classList.add('purple');
-                // Fade out after 0.5
-                setTimeout(() => {
-                  el.classList.add('fadeOut');
-                }, 500);
-              }, 300);
-            }, 250);
-          }, 500);
-        }, 2000);
-      });
+            return wait(250);
+          })
+          .then(() => {
+            el.classList.remove('circle');
+            return wait(300);
+          })
+          .then(() => {
+            el.classList.remove('red');
+            el.classList.add('purple');
+            return wait(500);
+          })
+          .then(() => {
+            el.classList.add('fadeOut');
+          });
+      }
+
+      go.addEventListener('click', animate);
     </script>
   </body>
 </html>
